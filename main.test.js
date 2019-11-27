@@ -17,7 +17,7 @@ test("discard transmission", t => {
                         uuid: "1234-123456-1234-1234",
                         tempr: {
                             template: {
-                                foo: "bar",
+                                foo: "bar"
                             },
                             temprs: [
                                 {
