@@ -9,7 +9,7 @@
     "start": "node app",
     "test": "nyc --reporter=html ava",
     "lint": "eslint --fix ./**/*.js",
-    "test-lint": "eslint ./*.js ./lib/*.js"
+    "test-lint": "eslint ./*.js"
   },
   "dependencies": {
     "oop-node-common": "https://github.com/open-interop/oop-node-common#develop"
