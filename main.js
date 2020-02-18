@@ -13,7 +13,7 @@ module.exports = (broker, config, logger) => {
                 delete tempr.temprs;
 
                 for (const child of children) {
-                    let toSend = { ...data };
+                    const toSend = { ...data };
                     toSend.tempr = child;
                     toSend.tempr.previous = tempr;
 
