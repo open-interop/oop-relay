@@ -13,13 +13,14 @@ module.exports = (broker, config, logger) => {
                 delete tempr.temprs;
 
                 for (const child of children) {
-                    data.tempr = child;
-                    data.tempr.previous = tempr;
+                    let toSend = { ...data };
+                    toSend.tempr = child;
+                    toSend.tempr.previous = tempr;
 
                     broker.publish(
                         config.exchangeName,
                         config.recursiveTemprQ,
-                        data
+                        toSend
                     );
                 }
             }
