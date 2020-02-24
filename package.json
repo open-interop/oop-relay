@@ -1,6 +1,6 @@
 {
   "name": "oop-relay",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Message relay service for OpenInterop",
   "main": "app.js",
   "author": "Daniel Young <daniel.young@bluefrontier.co.uk>",
