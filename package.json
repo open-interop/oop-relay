@@ -1,6 +1,6 @@
 {
   "name": "oop-relay",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Message relay service for OpenInterop",
   "main": "app.js",
   "author": "Daniel Young <daniel.young@bluefrontier.co.uk>",
@@ -12,7 +12,7 @@
     "test-lint": "eslint ./*.js"
   },
   "dependencies": {
-    "oop-node-common": "1.0.3"
+    "oop-node-common": "1.0.4"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^8.1.0",
