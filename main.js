@@ -6,7 +6,7 @@ module.exports = (broker, config, logger) => {
 
         broker.publish(config.exchangeName, config.coreResponseQ, data);
 
-        if (data.tempr.response && data.tempr.response.success) {
+        if (data.tempr.response) {
             if (data.tempr.temprs) {
                 const tempr = data.tempr;
                 const children = tempr.temprs;
