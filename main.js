@@ -37,6 +37,5 @@ module.exports = (broker, config, logger) => {
                 data
             );
         }
-
     });
 };

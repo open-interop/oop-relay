@@ -12,6 +12,6 @@ module.exports = new oop.Config({
     retryLimit: {
         name: "OOP_TRANSMISSION_RETRY_LIMIT",
         optional: true,
-        default: 0,
+        default: 0
     }
 });
