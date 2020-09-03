@@ -2,11 +2,11 @@
   "name": "oop-relay",
   "version": "1.0.7",
   "description": "Message relay service for OpenInterop",
-  "main": "app.js",
+  "main": "main.js",
   "author": "Daniel Young <daniel.young@bluefrontier.co.uk>",
   "license": "AGPL-3.0",
   "scripts": {
-    "start": "node app",
+    "start": "node app.js",
     "test": "nyc --reporter=html ava",
     "lint": "eslint --fix ./**/*.js",
     "test-lint": "eslint ./*.js"
