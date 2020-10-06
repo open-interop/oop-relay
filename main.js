@@ -32,7 +32,7 @@ module.exports = (broker, config, logger) => {
 
             /* TODO: This logic is duplicated elsewhere, may need fixing. */
             broker.publish(
-                config.endpointsExchangeName,
+                config.endpointsExchange,
                 `${config.endpointsQ}.${data.tempr.endpointType}`,
                 data
             );
