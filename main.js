@@ -4,10 +4,13 @@ module.exports = (broker, config, logger) => {
 
         logger.info(`Relaying ${data.uuid}.`);
 
-        broker.publish(config.exchangeName, config.coreResponseQ, data);
+        const maxRetries = data.tempr.retryLimit || config.retryLimit;
+        const retries = data.tempr.retries || 0;
 
-        if (data.tempr.response) {
-            if (data.tempr.temprs) {
+        if (data.tempr.response.success || data.tempr.retries >= maxRetries) {
+            broker.publish(config.exchangeName, config.coreResponseQ, data);
+
+            if (data.tempr.temprs && data.tempr.temprs.length) {
                 const tempr = data.tempr;
                 const children = tempr.temprs;
                 delete tempr.temprs;
@@ -24,6 +27,15 @@ module.exports = (broker, config, logger) => {
                     );
                 }
             }
+        } else {
+            data.tempr.retries = retries + 1;
+
+            /* TODO: This logic is duplicated elsewhere, may need fixing. */
+            broker.publish(
+                config.endpointsExchange,
+                `${config.endpointsQ}.${data.tempr.endpointType}`,
+                data
+            );
         }
     });
 };
